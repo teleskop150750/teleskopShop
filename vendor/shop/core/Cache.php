@@ -36,7 +36,7 @@ class Cache extends Singleton
         if (file_exists($file)) {
             $content = unserialize(file_get_contents($file));
             if (time() <= $content['end_time']) {
-                return $content;
+                return $content['data'];
             }
             unlink($file);
         }

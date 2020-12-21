@@ -15,9 +15,9 @@ class Registry extends Singleton
     /**
      * задать свойство
      * @param string $name
-     * @param string $value
+     * @param $value
      */
-    public function setProperty(string $name, string $value): void
+    public function setProperty(string $name, $value): void
     {
         self::$properties[$name] = $value;
     }
@@ -25,10 +25,10 @@ class Registry extends Singleton
     /**
      * получить свойство
      * @param $name
-     * @return string
+     * @return mixed
      * @throws \Exception
      */
-    public function getProperty($name):string
+    public function getProperty($name)
     {
         if (isset(self::$properties[$name])) {
             return self::$properties[$name];
